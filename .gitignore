@@ -1,0 +1,8 @@
+# ignore the class file and the setting file
+/bin/*
+/build/*
+/.settings/*
+/.gradle/*
+
+# ignore the classpatch file
+.classpath
