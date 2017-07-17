@@ -1,4 +1,4 @@
-package com.procurement.business.home.controller;
+package com.procurement.web;
 
 import org.springframework.stereotype.Controller;
 
