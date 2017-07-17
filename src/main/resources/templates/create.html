@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www/thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<head>
+    <title>Create</title>
+    <link href="../../static/css/datepicker.css" th:href="@{/css/datepicker.css}" rel="stylesheet" media="screen" />
+    <script src="https://code.jquery.com/datepicker.js" th:src="@{/js/datepicker.js}"></script>
+</head>
+<body>
+    <th:block layout:fragment="content">
+        <div class="page-header">
+            <h1>录入采购计划</h1>
+        </div>
+        <form class="form-horizontal">
+            <div class="form-group form-group-sm">
+                <label class="col-sm-1 control-label">类型</label>
+                <div class="col-sm-3">
+                    <input class="form-control" type="text" id="productType" name="productType">
+                </div>
+                <label class="col-sm-1 col-sm-offset-2 control-label">品号</label>
+                <div class="col-sm-3">
+                    <input class="form-control" type="text" id="productNo" name="productNo">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-1 control-label" for="procuredDate">采购时间</label>
+                <div class="col-sm-3">
+                    <input class="form-control" type="text" id="procuredDate" name="procuredDate">
+                </div>
+                <label class="col-sm-1 col-sm-offset-2 control-label">质检时间</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+    <input type="text" class="form-control">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div>
+                    <input class="form-control" type="text">
+                </div>
+            </div>
+        </form>
+	<script>
+	$(document).ready(function() {
+	    $("#procuredDate").datepicker();
+	})
+</script>
+    </th:block>
+</body>
+</html>
