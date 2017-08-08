@@ -26,49 +26,49 @@ public class Product implements Serializable {
 
     private String type;
 
-    @Column(nullable = false, name = "order_id")
+    @Column(nullable = true, name = "order_id")
     private String orderId;
 
-    @Column(nullable = false, name = "procure_date")
+    @Column(nullable = true, name = "procure_date")
     private Date procureDate;
 
-    @Column(nullable = false, name = "quality_date")
+    @Column(nullable = true, name = "quality_date")
     private Date qualityDate;
 
     /** 品类A3表整理 */
-    @Column(nullable = false, name = "organize_category_a3_date")
+    @Column(nullable = true, name = "organize_category_a3_date")
     private Date organizeCategoryA3Date;
 
     /** 品类A3表交接 */
-    @Column(nullable = false, name = "handover_category_a3_date")
+    @Column(nullable = true, name = "handover_category_a3_date")
     private Date handoverCategoryA3Date;
 
     /** 辅料及工艺单整理 */
-    @Column(nullable = false, name = "organize_accessories_and_process_sheet_date")
+    @Column(nullable = true, name = "organize_accessories_and_process_sheet_date")
     private Date organizeAccessoriesAndProcessSheetDate;
 
     /** 特殊辅料整理 */
-    @Column(nullable = false, name = "organize_specia_accessories_date")
+    @Column(nullable = true, name = "organize_specia_accessories_date")
     private Date organizeSpecialAccessoriesDate;
 
     /** 所有品类下单结束 */
-    @Column(nullable = false, name = "all_category_order_finish_date")
+    @Column(nullable = true, name = "all_category_order_finish_date")
     private Date allCategoryOrderFinishDate;
 
     /** A3总表汇总签批完 */
-    @Column(nullable = false, name = "master_a3_table_sign_finish_date")
+    @Column(nullable = true, name = "master_a3_table_sign_finish_date")
     private Date masterA3TableSignFinishDate;
 
     /** 产前样下单 */
-    @Column(nullable = false, name = "prenatal_sample_order_date")
+    @Column(nullable = true, name = "prenatal_sample_order_date")
     private Date prenatalSampleOrderDate;
 
     /** 产前样确认（车间）*/
-    @Column(nullable = false, name = "prenatal_sample_confirm_in_workshop_date")
+    @Column(nullable = true, name = "prenatal_sample_confirm_in_workshop_date")
     private Date prenatalSampleConfirmInWorkshopDate;
 
     /** 产前样确认（委外）*/
-    @Column(nullable = false, name = "prenatal_sample_confirm_subcontract_date")
+    @Column(nullable = true, name = "prenatal_sample_confirm_subcontract_date")
     private Date prenatalSampleConfirmInSubcontractDate;
 
     public long getId() {

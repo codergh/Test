@@ -1,4 +1,4 @@
-package com.procurement.common.util;
+package com.procurement.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
