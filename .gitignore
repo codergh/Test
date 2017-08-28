@@ -6,3 +6,4 @@
 
 # ignore the classpatch file
 .classpath
+/bin/

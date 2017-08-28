@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www/thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<head>
+    <title>Create</title>
+    <link th:href="@{/css/datepicker.css}" rel="stylesheet" media="screen" />
+    <script th:src="@{/js/datepicker.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>
+</head>
+<body>
+    <th:block layout:fragment="content">
+        <div class="page-header">
+            <h1>录入采购计划</h1>
+        </div>
+        <form class="form-horizontal" th:action="@{/create}" th:object="${product}" th:method="post" id="submitForm">
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label">类型</label>
+                <div class="col-sm-3">
+                    <input class="form-control" type="text" id="type" name="type">
+                </div>
+                <label class="col-sm-2 col-sm-offset-1 control-label">品号</label>
+                <div class="col-sm-3">
+                    <input class="form-control" type="text" id="productNo" name="productNo">
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" for="procuredDate">采购时间</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="procureDate" name="procureDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 col-sm-offset-1 control-label">质检时间</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="qualityDate" name="qualityDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" for="organizeCategoryA3Date">品类A3表整理</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="organizeCategoryA3Date" name="organizeCategoryA3Date">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 col-sm-offset-1 control-label">品类A3表交接</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="handoverCategoryA3Date" name="handoverCategoryA3Date">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" >辅料及工艺单整理</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="organizeAccessoriesAndProcessSheetDate" name="organizeAccessoriesAndProcessSheetDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 col-sm-offset-1 control-label">特殊辅料整理</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="organizeSpecialAccessoriesDate" name="organizeSpecialAccessoriesDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" >所有品类下单结束</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="allCategoryOrderFinishDate" name="allCategoryOrderFinishDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 col-sm-offset-1 control-label">A3总表汇总签批完</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="masterA3TableSignFinishDate" name="masterA3TableSignFinishDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" >产前样下单</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="prenatalSampleOrderDate" name="prenatalSampleOrderDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label class="col-sm-2 control-label" >产前样确认（车间）</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="prenatalSampleConfirmInWorkshopDate" name="prenatalSampleConfirmInWorkshopDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+                <label class="col-sm-2 col-sm-offset-1 control-label">产前样确认（委外）</label>
+                <div class="col-sm-3">
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control" id="prenatalSampleConfirmInSubcontractDate" name="prenatalSampleConfirmInSubcontractDate">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <div class="col-sm-3 col-sm-offset-2">
+                    <input type="submit" class="btn btn-success control-label" value="Add">
+                </div>
+            </div>
+        </form>
+    </th:block>
+</body>
+</html>

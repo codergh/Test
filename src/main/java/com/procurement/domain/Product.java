@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 public class Product implements Serializable {
@@ -22,53 +24,66 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "type")
     private String type;
 
-    @Column(nullable = true, name = "order_id")
+    @Column(name = "order_id")
     private String orderId;
 
-    @Column(nullable = true, name = "procure_date")
+    @Column(name = "procure_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date procureDate;
 
-    @Column(nullable = true, name = "quality_date")
+    @Column(name = "quality_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date qualityDate;
 
     /** 品类A3表整理 */
-    @Column(nullable = true, name = "organize_category_a3_date")
+    @Column(name = "organize_category_a3_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date organizeCategoryA3Date;
 
     /** 品类A3表交接 */
-    @Column(nullable = true, name = "handover_category_a3_date")
+    @Column(name = "handover_category_a3_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date handoverCategoryA3Date;
 
     /** 辅料及工艺单整理 */
-    @Column(nullable = true, name = "organize_accessories_and_process_sheet_date")
+    @Column(name = "organize_accessories_and_process_sheet_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date organizeAccessoriesAndProcessSheetDate;
 
     /** 特殊辅料整理 */
-    @Column(nullable = true, name = "organize_specia_accessories_date")
+    @Column(name = "organize_specia_accessories_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date organizeSpecialAccessoriesDate;
 
     /** 所有品类下单结束 */
-    @Column(nullable = true, name = "all_category_order_finish_date")
+    @Column(name = "all_category_order_finish_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date allCategoryOrderFinishDate;
 
     /** A3总表汇总签批完 */
-    @Column(nullable = true, name = "master_a3_table_sign_finish_date")
+    @Column(name = "master_a3_table_sign_finish_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date masterA3TableSignFinishDate;
 
     /** 产前样下单 */
-    @Column(nullable = true, name = "prenatal_sample_order_date")
+    @Column(name = "prenatal_sample_order_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date prenatalSampleOrderDate;
 
     /** 产前样确认（车间）*/
-    @Column(nullable = true, name = "prenatal_sample_confirm_in_workshop_date")
+    @Column(name = "prenatal_sample_confirm_in_workshop_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date prenatalSampleConfirmInWorkshopDate;
 
     /** 产前样确认（委外）*/
-    @Column(nullable = true, name = "prenatal_sample_confirm_subcontract_date")
+    @Column(name = "prenatal_sample_confirm_subcontract_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date prenatalSampleConfirmInSubcontractDate;
 
     public long getId() {
